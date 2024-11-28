@@ -1,0 +1,146 @@
+//UIU Bus demo
+
+package com.example.ct1_home_practice;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Label;
+import javafx.scene.shape.Arc;
+import javafx.scene.shape.Circle;
+import javafx.scene.shape.Rectangle;
+
+public class HelloController {
+    @FXML
+    Arc c1 = new Arc();
+    @FXML
+    Arc c2 = new Arc();
+    @FXML
+    Rectangle r = new Rectangle();
+    @FXML
+    Label l = new Label();
+
+    int speed = 0,slow = 0,normalSpeed=0;
+
+    @FXML
+    public void speedUp(ActionEvent e){
+        speed = 1;
+        slow = 0;
+        normalSpeed = 0;
+    }
+
+    @FXML
+public void speedDown(ActionEvent e){
+        slow = 1;
+        speed = 0;
+        normalSpeed = 0;
+    }
+    @FXML
+    public void setNormalSpeed(ActionEvent e){
+        normalSpeed = 1;
+    }
+
+    @FXML
+    public void goLeft(ActionEvent e){
+        if (speed == 1 && normalSpeed == 0){
+            c1.setCenterX(c1.getCenterX()-30);
+            c2.setCenterX(c2.getCenterX()-30);
+            l.setLayoutX(l.getLayoutX()-30);
+            r.setLayoutX(r.getLayoutX()-30);
+            c1.setRotate(c1.getRotate()-30);
+            c2.setRotate(c2.getRotate()-30);
+
+        }else if (slow == 1 && normalSpeed == 0){
+            c1.setCenterX(c1.getCenterX()-2);
+            c2.setCenterX(c2.getCenterX()-2);
+            l.setLayoutX(l.getLayoutX()-2);
+            r.setLayoutX(r.getLayoutX()-2);
+            c1.setRotate(c1.getRotate()-5);
+            c2.setRotate(c2.getRotate()-5);
+
+
+
+        }else{
+            c1.setCenterX(c1.getCenterX()-10);
+            c2.setCenterX(c2.getCenterX()-10);
+            l.setLayoutX(l.getLayoutX()-10);
+            r.setLayoutX(r.getLayoutX()-10);
+            c1.setRotate(c1.getRotate()-10);
+            c2.setRotate(c2.getRotate()-10);
+
+
+        }
+
+
+    }
+    @FXML
+    public void goRight(ActionEvent e) {
+        if (speed == 1 && normalSpeed == 0) {
+            c1.setCenterX(c1.getCenterX() + 30);
+            c2.setCenterX(c2.getCenterX() + 30);
+            l.setLayoutX(l.getLayoutX() + 30);
+            r.setLayoutX(r.getLayoutX() + 30);
+            c1.setRotate(c1.getRotate()+30);
+            c2.setRotate(c2.getRotate()+30);
+
+
+        } else if (slow == 1 && normalSpeed == 0) {
+            c1.setCenterX(c1.getCenterX() + 2);
+            c2.setCenterX(c2.getCenterX() + 2);
+            l.setLayoutX(l.getLayoutX() + 2);
+            r.setLayoutX(r.getLayoutX() + 2);
+            c1.setRotate(c1.getRotate()+5);
+            c2.setRotate(c2.getRotate()+5);
+
+        } else {
+            c1.setCenterX(c1.getCenterX() + 10);
+            c2.setCenterX(c2.getCenterX() + 10);
+            l.setLayoutX(l.getLayoutX() + 10);
+            r.setLayoutX(r.getLayoutX() + 10);
+            c1.setRotate(c1.getRotate()+10);
+            c2.setRotate(c2.getRotate()+10);
+        }
+    }
+    @FXML
+    public void goUp(ActionEvent e) {
+        if (speed == 1 && normalSpeed == 0) {
+            c1.setCenterY(c1.getCenterY() - 30);
+            c2.setCenterY(c2.getCenterY() - 30);
+            l.setLayoutY(l.getLayoutY() - 30);
+            r.setLayoutY(r.getLayoutY() - 30);
+
+        } else if (slow == 1 && normalSpeed == 0) {
+            c1.setCenterY(c1.getCenterY() - 2);
+            c2.setCenterY(c2.getCenterY() - 2);
+            l.setLayoutY(l.getLayoutY() - 2);
+            r.setLayoutY(r.getLayoutY() - 2);
+
+        } else {
+            c1.setCenterY(c1.getCenterY() - 10);
+            c2.setCenterY(c2.getCenterY() - 10);
+            l.setLayoutY(l.getLayoutY() - 10);
+            r.setLayoutY(r.getLayoutY() - 10);
+        }
+    }
+    @FXML
+    public void goDown(ActionEvent e) {
+        if (speed == 1 && normalSpeed == 0) {
+            c1.setCenterY(c1.getCenterY() + 30);
+            c2.setCenterY(c2.getCenterY() + 30);
+            l.setLayoutY(l.getLayoutY() + 30);
+            r.setLayoutY(r.getLayoutY() + 30);
+
+        } else if (slow == 1 && normalSpeed == 0) {
+            c1.setCenterY(c1.getCenterY() + 2);
+            c2.setCenterY(c2.getCenterY() + 2);
+            l.setLayoutY(l.getLayoutY() + 2);
+            r.setLayoutY(r.getLayoutY() + 2);
+
+        } else {
+            c1.setCenterY(c1.getCenterY() + 10);
+            c2.setCenterY(c2.getCenterY() + 10);
+            l.setLayoutY(l.getLayoutY() + 10);
+            r.setLayoutY(r.getLayoutY() + 10);
+        }
+    }
+
+}
